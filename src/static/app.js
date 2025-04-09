@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const activitySelect = document.getElementById("activity");
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
 
   // Function to fetch activities from API
   async function fetchActivities() {
@@ -28,7 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <p><strong>Participants:</strong></p>
           <ul>
-            ${details.participants.map(participant => `<li>${participant}</li>`).join("")}
+            ${
+              details.participants.length > 0
+                ? details.participants.map(participant => `<li>${participant}</li>`).join("")
+                : "<li>No participants yet</li>"
+            }
           </ul>
         `;
 
@@ -87,11 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Toggle dark mode
-  darkModeToggle.addEventListener("click", () => {
+  document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    document.querySelectorAll("header, section, .activity-card, button").forEach((el) => {
-      el.classList.toggle("dark-mode");
-    });
   });
 
   // Initialize app

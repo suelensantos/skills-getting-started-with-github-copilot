@@ -15,6 +15,11 @@ body {
   background-color: #f5f5f5;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
 header {
   text-align: center;
   padding: 20px 0;
@@ -22,6 +27,10 @@ header {
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+body.dark-mode header {
+  background-color: #333;
 }
 
 header h1 {
@@ -50,6 +59,11 @@ section {
   max-width: 500px;
 }
 
+body.dark-mode section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
 section h3 {
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -65,6 +79,11 @@ section h3 {
   background-color: #f9f9f9;
 }
 
+body.dark-mode .activity-card {
+  background-color: #1e1e1e;
+  border-color: #444;
+}
+
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
@@ -76,14 +95,29 @@ section h3 {
 
 .activity-card ul {
   margin-top: 10px;
-  padding-left: 20px;
+  padding-left: 20px; /* Ensure proper indentation for list items */
   list-style-type: disc;
   color: #555;
+  background-color: #f9f9f9; /* Light background for better readability */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px; /* Add padding inside the participant list */
+}
+
+body.dark-mode .activity-card ul {
+  background-color: #2a2a2a; /* Darker background for dark mode */
+  border-color: #444;
+  color: #ccc;
 }
 
 .activity-card ul li {
   margin-bottom: 5px;
   font-size: 14px;
+  color: #333;
+}
+
+body.dark-mode .activity-card ul li {
+  color: #e0e0e0; /* Adjust text color for dark mode */
 }
 
 .form-group {
@@ -116,7 +150,34 @@ button {
   transition: background-color 0.2s;
 }
 
+body.dark-mode button {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
 button:hover {
+  background-color: #3949ab;
+}
+
+body.dark-mode button:hover {
+  background-color: #555;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dark-mode-toggle:hover {
   background-color: #3949ab;
 }
 
@@ -153,57 +214,4 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
-}
-
-/* Dark mode styles */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-header.dark-mode {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-section.dark-mode {
-  background-color: #1e1e1e;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-.activity-card.dark-mode {
-  background-color: #1e1e1e;
-  border: 1px solid #444;
-}
-
-.activity-card h4.dark-mode {
-  color: #80d8ff;
-}
-
-button.dark-mode {
-  background-color: #444;
-  color: #e0e0e0;
-}
-
-button.dark-mode:hover {
-  background-color: #555;
-}
-
-/* Dark mode toggle button */
-#dark-mode-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #1a237e;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-#dark-mode-toggle:hover {
-  background-color: #3949ab;
 }
