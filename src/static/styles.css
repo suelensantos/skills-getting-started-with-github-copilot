@@ -112,6 +112,7 @@ body.dark-mode .activity-card ul {
 
 .activity-card ul li {
   margin-bottom: 5px;
+  margin-left: 20px;
   font-size: 14px;
   color: #333;
 }
